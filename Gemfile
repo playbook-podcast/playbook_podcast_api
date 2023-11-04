@@ -51,5 +51,6 @@ group :development do
 end
 
 gem "google-cloud-text_to_speech"
+gem "ruby-openai"
 
 gem "figaro"
