@@ -22,10 +22,9 @@ class GoogleTextToSpeechService
       voice: { name:, language_code: },
       audio_config: { audio_encoding: }
     )
-
+    
     response.audio_content
   end
-
 
   private
 
