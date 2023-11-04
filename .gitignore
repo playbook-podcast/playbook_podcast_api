@@ -33,3 +33,5 @@
 /db/schema.rb
 .idea
 .DS_Store
+/config/credentials.yml.enc
+/config/google_credentials.json
