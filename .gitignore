@@ -33,3 +33,6 @@
 /db/schema.rb
 .idea
 .DS_Store
+
+/config/application.yml
+/config/google_credentials.json
