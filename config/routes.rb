@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace 'api' do
     namespace 'v1' do
+      get '/subjects', to: 'subjects#index', as: :subjects
       get '/subjects/:id', to: 'subjects#show', as: :subject
     end
   end

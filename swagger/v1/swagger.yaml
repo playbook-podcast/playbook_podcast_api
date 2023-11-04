@@ -4,6 +4,14 @@ info:
   title: API V1
   version: v1
 paths:
+  "/api/v1/subjects":
+    get:
+      summary: subjects index
+      responses:
+        '200':
+          description: Successful
+        '204':
+          description: No subjects
   "/api/v1/subjects/{id}":
     parameters:
     - name: id
