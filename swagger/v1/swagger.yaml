@@ -1,0 +1,26 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/subjects/{id}":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      description: Subject ID
+      schema:
+        type: integer
+    get:
+      summary: show subject
+      responses:
+        '200':
+          description: Successful
+        '404':
+          description: Subject not found
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: 45dfbd071387.ngrok.app
