@@ -46,3 +46,6 @@ group :development do
   # gem "spring"
 end
 
+gem "google-cloud-text_to_speech"
+
+gem "figaro"
