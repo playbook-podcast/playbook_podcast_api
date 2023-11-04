@@ -50,12 +50,14 @@ group :development do
   # gem "spring"
 end
 
+
+gem "google-cloud-text_to_speech"
+gem "ruby-openai"
+
 group :test do
   gem 'vcr'
   gem 'webmock'
 end
-
-gem 'google-cloud-text_to_speech'
 
 gem 'figaro'
 gem 'activeinteractor', require: 'active_interactor'
