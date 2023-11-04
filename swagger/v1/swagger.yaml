@@ -6,12 +6,41 @@ info:
 paths:
   "/api/v1/subjects":
     get:
-      summary: subjects index
+      summary: subjects list
+      tags:
+      - Subjects
       responses:
         '200':
           description: Successful
         '204':
           description: No subjects
+    post:
+      summary: create a subject
+      tags:
+      - Subjects
+      parameters: []
+      responses:
+        '201':
+          description: Subject created
+        '400':
+          description: Bad Request
+        '422':
+          description: Invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: Subject title
+                body:
+                  type: string
+                  description: Subject body
+              required:
+              - title
+              - body
   "/api/v1/subjects/{id}":
     parameters:
     - name: id
@@ -21,7 +50,9 @@ paths:
       schema:
         type: integer
     get:
-      summary: show subject
+      summary: show a subject
+      tags:
+      - Subjects
       responses:
         '200':
           description: Successful

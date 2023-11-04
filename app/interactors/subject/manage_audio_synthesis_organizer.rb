@@ -6,8 +6,9 @@ class Subject::ManageAudioSynthesisContext < ActiveInteractor::Context::Base
   validates :subject, presence: true, on: :calling
 end
 
-class Subject::ManageAudioSynthesis < ActiveInteractor::Organizer::Base
+class Subject::ManageAudioSynthesisOrganizer < ActiveInteractor::Organizer::Base
   organize do
+    add Subject::CreateSubject
     add SynthesizeAudio, before: -> { context.text = context[:subject].body }
     add Subject::SaveAudioToSubject
   end

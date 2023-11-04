@@ -11,7 +11,8 @@ class Subject::SaveAudioToSubject < ActiveInteractor::Base
     attach_audio_to_subject
 
     unless context.subject.save
-      context.fail!(message: 'Failed to save audio to subject')
+      context.errors.add(:base, 'Failed to save audio to subject')
+      context.fail!(context[:subject].errors)
     end
   end
 
