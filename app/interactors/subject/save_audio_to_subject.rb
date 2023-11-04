@@ -1,0 +1,31 @@
+# frozen_string_literal: true
+
+class Subject::SaveAudioToSubjectContext < ActiveInteractor::Context::Base
+  attributes :subject, :audio
+
+  validates :subject, :audio, presence: true, on: :calling
+end
+
+class Subject::SaveAudioToSubject < ActiveInteractor::Base
+  def perform
+    attach_audio_to_subject
+
+    unless context.subject.save
+      context.fail!(message: 'Failed to save audio to subject')
+    end
+  end
+
+  private
+
+  def attach_audio_to_subject
+    context.subject.body_audio.attach(
+      io: StringIO.new(context.audio),
+      filename:,
+      content_type: 'audio/mpeg'
+    )
+  end
+
+  def filename
+    "#{context[:subject].id}_#{Time.now.to_i}.mp3"
+  end
+end
