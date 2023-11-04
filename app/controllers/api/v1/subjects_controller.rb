@@ -2,7 +2,7 @@ class Api::V1::SubjectsController < ApplicationController
   def index
     subjects = Subject.order(created_at: :desc)
 
-    if subjects.any?
+    if subjects.exists?
       render json: subjects, each_serializer: SubjectsSerializer
     else
       render json: { error: 'No subjects', status: 204 }
