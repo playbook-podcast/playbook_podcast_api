@@ -1,4 +1,8 @@
+require 'streamio-ffmpeg'
+
 class Subject < ApplicationRecord
+  include Rails.application.routes.url_helpers
+
   has_one_attached :body_audio
   has_one_attached :intro_audio
   has_one_attached :summary_audio
@@ -11,15 +15,19 @@ class Subject < ApplicationRecord
 
   def audio_duration
     if body_audio.attached?
-      file_path = ActiveStorage::Blob.service.send(:path_for, body_audio.key)
+      file_path = "tmp/audio/#{body_audio.filename}"
 
-      Mp3Info.open(file_path) do |mp3info|
-        return mp3info.length.to_i
+      File.open(file_path, 'wb') do |file|
+        file.write(body_audio.download)
       end
+
+      audio = FFMPEG::Movie.new(file_path)
+
+      return audio.duration.to_i
     else
       0
     end
-  rescue Mp3InfoError
+  rescue FFMPEG::Error
     0
   end
 end
