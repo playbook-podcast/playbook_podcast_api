@@ -1,7 +1,15 @@
 class SubjectSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
 
-  attributes :id, :title, :summary, :body, :estimate_reading_time, :body_audio_duration
+  attributes :id, :title, :introduction, :summary, :body, :estimate_reading_time, :body_audio_duration
+
+  def introduction
+    {
+      audio_url: intro_audio_url,
+      text: object.intro,
+      transcription: object.intro_transcription,
+    }
+  end
 
   def summary
     {
@@ -33,5 +41,9 @@ class SubjectSerializer < ActiveModel::Serializer
 
   def summary_audio_url
     rails_blob_url(object.summary_audio, only_path: true) if object.summary_audio.attached?
+  end
+
+  def intro_audio_url
+    rails_blob_url(object.intro_audio, only_path: true) if object.intro_audio.attached?
   end
 end
