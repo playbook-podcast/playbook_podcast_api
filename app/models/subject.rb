@@ -23,11 +23,21 @@ class Subject < ApplicationRecord
 
       audio = FFMPEG::Movie.new(file_path)
 
-      return audio.duration.to_i
+      duration =
+        case audio.duration.to_i
+        when 0
+          '0 seconds'
+        when 1...60
+          "#{audio.duration.to_i} seconds"
+        else
+          "#{audio.duration.to_i / 60} minutes"
+        end
+
+      return duration
     else
-      0
+      '0 seconds'
     end
   rescue FFMPEG::Error
-    0
+    '0 seconds'
   end
 end
