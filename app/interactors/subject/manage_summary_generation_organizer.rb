@@ -14,6 +14,7 @@ class Subject::ManageSummaryGenerationOrganizer < ActiveInteractor::Organizer::B
     add Subject::SaveSummaryAudioToSubject
     add GetAudioTranscription, before: -> { get_audio_transcription_context }
     add Subject::SaveSummaryTranscription
+    add Subject::ManageIntroGenerationOrganizer
   end
 
   private
