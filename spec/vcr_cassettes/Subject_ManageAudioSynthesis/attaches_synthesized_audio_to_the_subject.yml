@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://oauth2.googleapis.com/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJwbGF5Ym9vay1wb2RjYXN0LWFwaUBwbGF5Ym9vay1wb2RjYXN0LmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9vYXV0aDIuZ29vZ2xlYXBpcy5jb20vdG9rZW4iLCJleHAiOjE2OTkxMjc0MjcsImlhdCI6MTY5OTEyNzMwNywic2NvcGUiOiJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2Nsb3VkLXBsYXRmb3JtIn0.FPKXul_sFBBn7SOE4PgY5-ODmfb5BjWdLJNDajSHXPhPAbGohBge9tNBwrmeYT13z72ibjUilq3CuvOJGomGYud4R_UNOVf_rI6vP8xhEk5KCloCkUUFeSZVfnvSZi_0dNyt_7-QMgBF-88BV1AEnxDLyf2mBdJhyutln7kDxgCryAadYS6xp6am6TnRpFVOXtjScB21Ha3-dR9A1o78SHi6Da_37Kg4PMTFDBJjCLGv7ZmSTTzLfPg84SiqQrwSEljFj_iOADYOTD12qLsk5bDbmBUVr_znOkst_h4qC8VTBQ0Kmc5l1sbwBT-PW2JOVMZRGTg5qtTDFGK7rDlzyA
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Sat, 04 Nov 2023 19:49:27 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"ya29.c.c0AY_VpZjdk61PRnRsPmeRfh7-LmFTt1-cyh93ezPZpvMG4VhtjJ03O_vwFgr7g1K7HywhBKIB79YIyNcpGUP5XKTIP_d_Zs5VPddNByxLvTj0-xCcn-QAxqnZ0-gANumr-pSpi5lU4DLHD9-BC17kZKzoaJt3jjoeAoLqdOubfWJvjiYx3scI1oS0pXJwj_pAi3D95LcwEIoHuhtC1R4fj-mB5xO9bkp8kCudZBt73VaPjUffJ37Y2AuYuHLeEx3dIaWKhxbWSxyUakW0RWQeBF9zieXhBdllK33tbcYzcuMZVlCT0hC0OHz2mziE_xxrz2yxbnYK2TBEptrJYj-wThBN_Csw3cpKjXpqrC_bNBcO4IyXTh0upnFEN385AZ28i8SsqFijBX3nJawqM9I6-jlZd3ma-1Z3g6oMt6qOYJjkU1wpQxyam9p7u1bpbo1qUnrtyw5V_669V0ogYwQq6ix0Qmb4aFxseaw8cZ70WQJh7FnOh-pX0SBzxWQXgv1QM2qijMRuaFwUtZd84YQpk5B7I698Ipb0736RvidS6UR5ubzS2tgYWdJq0MUveg5X1OJZ0e-hU1034harsYShvR-JS5x9dg_vkmqU8kdz5Y4B4yg86BctoQrsetk_IxSujBX1f_5np9OMltj58RQrwzljy3Xpa4gaRuaB_8U8mjv_Q9gmi_40yQk8FRBQQW32hVByF4_tmlsjm--IjJdV4ieqFWwpQwB28yZ2OcIzOrY6f54o7WFXmvnypjimZa_O6OUrSxgxMmv7j4fMpl7q3Yn8bY2gtVItck-Uy002-9jMuvJsh_791t1eU_BdROfQo5OI1Wq6RV42aroqlOQJOYMiRIut6VrBkMmSq627paM1mdJSU86cqrqS142YlroUbJWyRdlbtwyfiglqVJrnah3y2IJn7qx_6wRbMU78q2IlS-6QYXXfuzk5iyfylhy4q2rS1jRmdOm-Rf1Yy9SnYesFMmoh0uJXiW6iXFpMMlrn9q4_b_eJ_a6","expires_in":3599,"token_type":"Bearer"}'
+  recorded_at: Sat, 04 Nov 2023 19:49:27 GMT
+recorded_with: VCR 6.1.0

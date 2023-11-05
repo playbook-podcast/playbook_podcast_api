@@ -12,6 +12,7 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
@@ -52,7 +53,10 @@ end
 
 
 gem "google-cloud-text_to_speech"
+gem "google-cloud-storage"
 gem "ruby-openai"
+
+
 
 group :test do
   gem 'vcr'
