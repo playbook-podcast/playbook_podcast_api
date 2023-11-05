@@ -17,6 +17,7 @@ class Subject::ManageSummaryGenerationOrganizer < ActiveInteractor::Organizer::B
   end
 
   private
+
   def synthesize_audio_context
     context.text = context[:subject].summary
     context.filename = "#{context[:subject].id}_#{Time.now.to_s}"
