@@ -13,9 +13,11 @@ class Subject::ManageAudioSynthesisOrganizer < ActiveInteractor::Organizer::Base
     add Subject::SaveAudioToSubject
     add GetAudioTranscription, before: -> { get_audio_transcription_context }
     add Subject::SaveTranscription
+    add Subject::ManageSummaryGenerationOrganizer
   end
 
   private
+
   def synthesize_audio_context
     context.text = context[:subject].body
     context.filename = "#{context[:subject].id}_#{Time.now.to_s}"
