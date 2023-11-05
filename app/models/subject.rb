@@ -26,7 +26,7 @@ class Subject < ApplicationRecord
       duration =
         case audio.duration.to_i
         when 0
-          "0 seconds"
+          '0 seconds'
         when 1...60
           "#{audio.duration.to_i} seconds"
         else
@@ -35,7 +35,7 @@ class Subject < ApplicationRecord
 
       return duration
     else
-      "0 seconds"
+      '0 seconds'
     end
   rescue FFMPEG::Error
     "0 seconds"
