@@ -6,6 +6,7 @@ class SubjectSerializer < ActiveModel::Serializer
   def summary
     {
       audio_url: summary_audio_url,
+      text: object.summary,
       transcription: object.summary_transcription,
     }
   end
@@ -13,6 +14,7 @@ class SubjectSerializer < ActiveModel::Serializer
   def body
     {
       audio_url: body_audio_url,
+      text: object.body,
       transcription: object.body_transcription,
     }
   end
