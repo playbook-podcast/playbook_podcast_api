@@ -38,6 +38,6 @@ class Subject < ApplicationRecord
       '0 seconds'
     end
   rescue FFMPEG::Error
-    "0 seconds"
+    '0 seconds'
   end
 end
