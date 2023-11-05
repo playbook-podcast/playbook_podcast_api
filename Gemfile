@@ -62,3 +62,5 @@ end
 gem 'figaro'
 gem 'activeinteractor', require: 'active_interactor'
 gem 'pry'
+gem 'readingtime'
+gem 'mp3info'
