@@ -175,6 +175,8 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
+    mp3info (0.8.5)
+      ruby-mp3info (>= 0.8.5)
     msgpack (1.7.2)
     multi_json (1.15.0)
     multipart-post (2.3.0)
@@ -237,6 +239,7 @@ GEM
     rake (13.1.0)
     rdoc (6.5.0)
       psych (>= 4.0.0)
+    readingtime (0.4.0)
     reline (0.3.9)
       io-console (~> 0.5)
     rexml (3.2.6)
@@ -271,6 +274,7 @@ GEM
     rswag-ui (2.11.0)
       actionpack (>= 3.1, < 7.2)
       railties (>= 3.1, < 7.2)
+    ruby-mp3info (0.8.10)
     ruby-openai (5.2.0)
       event_stream_parser (>= 0.3.0, < 1.0.0)
       faraday (>= 1)
@@ -307,11 +311,13 @@ DEPENDENCIES
   factory_bot_rails
   figaro
   google-cloud-text_to_speech
+  mp3info
   pg (~> 1.1)
   pry
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.8)
+  readingtime
   rspec-rails
   rswag
   ruby-openai
