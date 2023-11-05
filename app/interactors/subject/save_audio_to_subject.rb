@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class Subject::SaveAudioToSubjectContext < ActiveInteractor::Context::Base
-  attributes :subject, :audio
+  attributes :subject, :audio, :audio_type
 
-  validates :subject, :audio, presence: true, on: :calling
+  validates :subject, :audio, :audio_type, presence: true, on: :calling
 end
 
 class Subject::SaveAudioToSubject < ActiveInteractor::Base
@@ -27,6 +27,6 @@ class Subject::SaveAudioToSubject < ActiveInteractor::Base
   end
 
   def filename
-    "#{context[:subject].id}_#{Time.now.to_i}.mp3"
+    "#{context[:subject].id}_#{Time.now.to_i}.#{context.audio_type}"
   end
 end
